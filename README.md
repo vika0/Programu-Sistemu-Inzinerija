@@ -12,7 +12,7 @@ Jurigta Gečaitė https://github.com/JurgitaG
 
 Aurimas Žalnieraitis
 
-Simonas Valiulis
+Simonas Valiulis https://github.com/BirdOfTime
 
 
 lokaliai matomas projektas: http://127.0.0.1:8001/
