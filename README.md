@@ -1,4 +1,4 @@
-Programų Sistemų Inžinerijos - Semestro projektas
+Programų Sistemų Inžinerijos & Semestro projektas
 
 Komanda - Alkani žiniomis
 
@@ -17,5 +17,6 @@ Simonas Valiulis https://github.com/BirdOfTime
 
 lokaliai matomas projektas: http://127.0.0.1:8001/
 
+backlog: https://trello.com/b/k460BxHI/projektas
 
 # Programu-Sistemu-Inzinerija
