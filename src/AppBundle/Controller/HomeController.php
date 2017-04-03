@@ -15,12 +15,12 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends Controller
 {
     /**
-     * @Route("/about")
+     * @Route("/")
      */
     public function indexAction(Request $request)
     {
 
-        return $this->render('default/about.html.twig', [
+        return $this->render('default/home/home.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }

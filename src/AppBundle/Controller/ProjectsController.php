@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: root
+ * Date: 17.3.29
+ * Time: 20.59
+ */
 
 namespace AppBundle\Controller;
 
@@ -6,15 +12,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class ProjectsController extends Controller
 {
     /**
-     * @Route("/default", name="homepage")
+     * @Route("/projects")
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('', [
+
+        return $this->render('default/projects/projects.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
