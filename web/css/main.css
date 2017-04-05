@@ -1,3 +1,9 @@
 #project-page {
     margin-top: 40px;
 }
+.navbar-inverse {
+    background-color: #2E7ba9;
+}
+#sidebar-wrapper {
+    background: #363939;
+}
