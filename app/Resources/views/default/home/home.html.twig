@@ -4,21 +4,25 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/home-style.css') }}">
 {% endblock %}
+{% block header %}
+{% endblock %}
 {% block body %}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-offset-3" style="color: white">
-                <p>forma dar neveikia, <a class="a-hover" href="about"> pereiti į vidinį puslapį</a></p>
-            </div>
-        </div>
-    </div>
 
+        <div class="front-page-logo">
+            <img src="{{ asset('images/logo1.png') }}" />
+            <p class="front-page-logo-text">TASKS</p>
+            <p class="front-page-title"> | Geriausias pasirinkimas užduočių tvarkymui</p>
+        </div>
     <div class="login">
+
         <h1>Login</h1>
         <form method="post">
             <input type="text" name="u" placeholder="Username" required="required" />
             <input type="password" name="p" placeholder="Password" required="required" />
             <button type="submit" class="btn btn-primary btn-block btn-large">Sign In</button>
         </form>
+            {#<div >#}
+                <p style="color: white" >forma dar neveikia, <a class="a-hover" href="about" style="color: #B4B9BE"> pereiti į vidinį puslapį</a></p>
+            {#</div>#}
     </div>
 {% endblock %}
