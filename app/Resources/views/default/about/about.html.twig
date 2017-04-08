@@ -2,10 +2,221 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    <div class="row">
-        <div class="text-center">
-            <h1>Pradinis puslapis</h1>
-            <p>Puslapis kuriamas</p>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+                <div class="text-center">
+                    <h3>Mano užduotys</h3>
+                </div>
+                <table class="table table-sm table-inverse">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Pavadinimas</th>
+                        <th>Projektas</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-warning">
+                        <td>1</td>
+                        <td>Dizaino parinkimas</td>
+                        <td>Projektas.lt</td>
+                        <td>2017-05-04</td>
+                        <td>in progress</td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td>2</td>
+                        <td>Korekcijos</td>
+                        <td>Projektas1.lt</td>
+                        <td>2017-04-07</td>
+                        <td>not started</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Dizaino parinkimas</td>
+                        <td>Projektas2.lt</td>
+                        <td>2017-04-18</td>
+                        <td>not started</td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>4</td>
+                        <td>Dizaino parinkimas</td>
+                        <td>Projektas3.lt</td>
+                        <td>2017-04-18</td>
+                        <td>done</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Dizaino parinkimas</td>
+                        <td>Projektas4.lt</td>
+                        <td>2017-04-18</td>
+                        <td>not started</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Dizaino parinkimas</td>
+                        <td>Projektas5.lt</td>
+                        <td>2017-04-18</td>
+                        <td>not started</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Dizaino parinkimas</td>
+                        <td>Projektas22.lt</td>
+                        <td>2017-04-18</td>
+                        <td>not started</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Dizaino parinkimas</td>
+                        <td>Projektas12.lt</td>
+                        <td>2017-04-18</td>
+                        <td>not started</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <h3>Gimtadieniai</h3>
+                </div>
+                <table class="table table-sm table-inverse">
+                    <thead>
+                    <tr>
+                        <th>Vardas</th>
+                        <th>Pavardė</th>
+                        <th>Gimimo data</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>1996-04-08</td>
+                    </tr>
+                    <tr>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>1996-05-08</td>
+                    </tr>
+                    <tr>
+                        <td>Larry</td>
+                        <td>Bird</td>
+                        <td>1996-05-08</td>
+                    </tr>
+                    <tr>
+                        <td>Larry</td>
+                        <td>Bird</td>
+                        <td>1996-05-08</td>
+                    </tr>
+                        <td>Larry</td>
+                        <td>Bird</td>
+                        <td>1996-05-08</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h3>Pasiūlymai</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="offer-img-size">
+                            <img src="{{ asset('images/offer.jpg') }}" />
+                        </div>
+                        <div class="text-center">
+                            <h4>Pasiūlymas1</h4>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="offer-img-size">
+                            <img src="{{ asset('images/offer1.jpg') }}" />
+                        </div>
+                        <div class="text-center">
+                            <h4>Pasiūlymas2</h4>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>
+                    </div>
+                    <div class="clearfix offers-margin"></div>
+                    <div class="col-md-6">
+                        <div class="offer-img-size">
+                            <img src="{{ asset('images/offer2.jpg') }}" />
+                        </div>
+                        <div class="text-center">
+                            <h4>Pasiūlymas3</h4>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h3>Kalendorius</h3>
+                </div>
+                    <ul class="nav nav-justified">
+                        <li><a class="text-center" href="#"><i class="fa fa-tag fa-5x"></i> <br>Tags</a></li>
+                        <li><a class="text-center" href="#"><i class="fa fa-bookmark fa-5x"></i> <br>Užduotys</a></li>
+                        <li><a class="text-center" href="#"><i class="fa fa-users  fa-5x"></i> <br>Susitikimai</a></li>
+                    </ul>
+                    <hr>
+                    <div id="calendar"></div>
+            </div>
         </div>
     </div>
+    <script>
+        $.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js',function(){
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                editable: true,
+                events: [
+                    {
+                        title: 'Paskutinė savaitė pabaigti projektui',
+                        start: new Date(y, m, 16),
+                        end: new Date(y, m, 20)
+                    },
+                    {
+                        id: 999,
+                        title: 'Susitikimas',
+                        start: new Date(y, m, d-3, 16, 0),
+                        allDay: false
+                    },
+                    {
+                        id: 999,
+                        title: 'Susitikimas',
+                        start: new Date(y, m, d+4, 16, 0),
+                        allDay: false
+                    },
+                    {
+                        title: 'Šventė',
+                        start: new Date(y, m, d, 12, 0),
+                        end: new Date(y, m, d, 14, 0),
+                        allDay: false
+                    },
+                    {
+                        title: 'Gimtadienis',
+                        start: new Date(y, m, d+1, 19, 0),
+                        end: new Date(y, m, d+1, 22, 30),
+                        allDay: false
+                    }
+                ]
+            });
+        })
+    </script>
 {% endblock %}

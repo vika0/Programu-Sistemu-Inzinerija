@@ -46,3 +46,21 @@
     background: rgba(239, 239, 239, 0.7);
     text-align: center;
 }
+/*tasks table colors*/
+.table-success {
+    background-color: #dff0d8;
+}
+.table-danger{
+    background-color: #f2dede;
+}
+.table-warning{
+    background-color: #fcf8e3;
+}
+/**/
+.offer-img-size img{
+    width: 100%;
+    height: 150px;
+}
+.offers-margin{
+    margin-bottom: 20px;
+}
