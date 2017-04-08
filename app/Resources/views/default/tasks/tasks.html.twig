@@ -7,8 +7,95 @@
             <div class="text-center">
                 <h1>Užduočių puslapis</h1>
             </div>
+            <div class="text-right">
+                <p class="paragraph-display-inline">
+                    <input type="checkbox" id="cbox1" value="first_checkbox">
+                    <label for="cbox1">Aktyvios užduotys</label>
+                </p>
+                <p class="paragraph-display-inline task-checkbox-margin">
+                    <input type="checkbox" id="cbox2" value="second_checkbox">
+                    <label for="cbox2">Mano užduotys</label>
+                </p>
+            </div>
+            <table class="table table-sm table-inverse">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pavadinimas</th>
+                    <th>Projektas</th>
+                    <th>Komandos narys</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-warning">
+                    <td>1</td>
+                    <td><a href="/tasks/show">Dizaino parinkimas</a></td>
+                    <td>Projektas.lt</td>
+                    <td>Vardenis</td>
+                    <td>2017-05-04</td>
+                    <td>in progress</td>
+                </tr>
+                <tr class="table-danger">
+                    <td>2</td>
+                    <td><a href="tasks/show">Korekcijos</a></td>
+                    <td>Projektas1.lt</td>
+                    <td>Vardenis</td>
+                    <td>2017-04-07</td>
+                    <td>not started</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
+                    <td>Projektas2.lt</td>
+                    <td>Vardenis</td>
+                    <td>2017-04-18</td>
+                    <td>not started</td>
+                </tr>
+                <tr class="table-success">
+                    <td>4</td>
+                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
+                    <td>Projektas3.lt</td>
+                    <td>Vardenis</td>
+                    <td>2017-04-18</td>
+                    <td>done</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
+                    <td>Projektas4.lt</td>
+                    <td>Vardenis</td>
+                    <td>2017-04-18</td>
+                    <td>not started</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
+                    <td>Projektas5.lt</td>
+                    <td>Vardenis</td>
+                    <td>2017-04-18</td>
+                    <td>not started</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
+                    <td>Projektas22.lt</td>
+                    <td>Vardenis</td>
+                    <td>2017-04-18</td>
+                    <td>not started</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
+                    <td>Projektas12.lt</td>
+                    <td>Vardenis</td>
+                    <td>2017-04-18</td>
+                    <td>not started</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    {% include 'default/error/error.html.twig' %}
 
 {% endblock %}

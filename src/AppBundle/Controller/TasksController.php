@@ -24,4 +24,13 @@ class TasksController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
+    /**
+     * @Route("/tasks/show")
+     */
+    public function showAction()
+    {
+        return $this->render('default/tasks/showTask.html.twig', array(
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ));
+    }
 }

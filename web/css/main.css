@@ -64,3 +64,9 @@
 .offers-margin{
     margin-bottom: 20px;
 }
+.paragraph-display-inline{
+    display: inline;
+}
+.task-checkbox-margin{
+    margin-left: 15px;
+}
