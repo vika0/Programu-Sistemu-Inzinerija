@@ -12,15 +12,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class CalendarController extends Controller
+class UserController extends Controller
 {
     /**
-     * @Route("/calendar")
+     * @Route("/user")
      */
     public function indexAction(Request $request)
     {
 
-        return $this->render('default/calendar/calendar.html.twig', [
+        return $this->render('default/user/user.html.twig', [
 //            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
