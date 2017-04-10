@@ -21,7 +21,7 @@ class TasksController extends Controller
     {
 
         return $this->render('default/tasks/tasks.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+//            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
     /**
@@ -30,7 +30,7 @@ class TasksController extends Controller
     public function showAction()
     {
         return $this->render('default/tasks/showTask.html.twig', array(
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+//            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
 }
