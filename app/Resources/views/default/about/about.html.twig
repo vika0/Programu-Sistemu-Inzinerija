@@ -22,7 +22,7 @@
                     <tbody>
                     <tr class="table-warning">
                         <td>1</td>
-                        <td><a href="tasks/show">Dizaino parinkimas</a>s</td>
+                        <td><a href="tasks/show">Dizaino parinkimas</a></td>
                         <td>Projektas.lt</td>
                         <td>2017-05-04</td>
                         <td>in progress</td>
@@ -120,103 +120,55 @@
                 </table>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="text-center">
-                    <h3>Pasiūlymai</h3>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="offer-img-size">
-                            <img src="{{ asset('images/offer.jpg') }}" />
-                        </div>
-                        <div class="text-center">
-                            <h4>Pasiūlymas1</h4>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="offer-img-size">
-                            <img src="{{ asset('images/offer1.jpg') }}" />
-                        </div>
-                        <div class="text-center">
-                            <h4>Pasiūlymas2</h4>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>
-                    </div>
-                    <div class="clearfix offers-margin"></div>
-                    <div class="col-md-6">
-                        <div class="offer-img-size">
-                            <img src="{{ asset('images/offer2.jpg') }}" />
-                        </div>
-                        <div class="text-center">
-                            <h4>Pasiūlymas3</h4>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="text-center">
-                    <h3>Kalendorius</h3>
-                </div>
-                    <ul class="nav nav-justified">
-                        <li><a class="text-center" href="#"><i class="fa fa-tag fa-5x"></i> <br>Tags</a></li>
-                        <li><a class="text-center" href="#"><i class="fa fa-bookmark fa-5x"></i> <br>Užduotys</a></li>
-                        <li><a class="text-center" href="#"><i class="fa fa-users  fa-5x"></i> <br>Susitikimai</a></li>
-                    </ul>
-                    <hr>
-                    <div id="calendar"></div>
-            </div>
-        </div>
+        {#<div class="row">#}
+            {#<div class="col-md-6">#}
+                {#<div class="text-center">#}
+                    {#<h3>Pasiūlymai</h3>#}
+                {#</div>#}
+                {#<div class="row">#}
+                    {#<div class="col-md-6">#}
+                        {#<div class="offer-img-size">#}
+                            {#<img src="{{ asset('images/offer.jpg') }}" />#}
+                        {#</div>#}
+                        {#<div class="text-center">#}
+                            {#<h4>Pasiūlymas1</h4>#}
+                        {#</div>#}
+                        {#<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>#}
+                    {#</div>#}
+                    {#<div class="col-md-6">#}
+                        {#<div class="offer-img-size">#}
+                            {#<img src="{{ asset('images/offer1.jpg') }}" />#}
+                        {#</div>#}
+                        {#<div class="text-center">#}
+                            {#<h4>Pasiūlymas2</h4>#}
+                        {#</div>#}
+                        {#<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>#}
+                    {#</div>#}
+                    {#<div class="clearfix offers-margin"></div>#}
+                    {#<div class="col-md-6">#}
+                        {#<div class="offer-img-size">#}
+                            {#<img src="{{ asset('images/offer2.jpg') }}" />#}
+                        {#</div>#}
+                        {#<div class="text-center">#}
+                            {#<h4>Pasiūlymas3</h4>#}
+                        {#</div>#}
+                        {#<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate viverra ornare. Curabitur finibus eu turpis sed vehicula. Suspendi</p>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="col-md-6">#}
+                {#<div class="text-center">#}
+                    {#<h3>Kalendorius</h3>#}
+                {#</div>#}
+                    {#<ul class="nav nav-justified">#}
+                        {#<li><a class="text-center" href="#"><i class="fa fa-tag fa-5x"></i> <br>Tags</a></li>#}
+                        {#<li><a class="text-center" href="#"><i class="fa fa-bookmark fa-5x"></i> <br>Užduotys</a></li>#}
+                        {#<li><a class="text-center" href="#"><i class="fa fa-users  fa-5x"></i> <br>Susitikimai</a></li>#}
+                    {#</ul>#}
+                    {#<hr>#}
+                    {#<div id="calendar"></div>#}
+            {#</div>#}
+        {#</div>#}
     </div>
-    <script>
-        $.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js',function(){
 
-            var date = new Date();
-            var d = date.getDate();
-            var m = date.getMonth();
-            var y = date.getFullYear();
-
-            $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                editable: true,
-                events: [
-                    {
-                        title: 'Paskutinė savaitė pabaigti projektui',
-                        start: new Date(y, m, 16),
-                        end: new Date(y, m, 20)
-                    },
-                    {
-                        id: 999,
-                        title: 'Susitikimas',
-                        start: new Date(y, m, d-3, 16, 0),
-                        allDay: false
-                    },
-                    {
-                        id: 999,
-                        title: 'Susitikimas',
-                        start: new Date(y, m, d+4, 16, 0),
-                        allDay: false
-                    },
-                    {
-                        title: 'Šventė',
-                        start: new Date(y, m, d, 12, 0),
-                        end: new Date(y, m, d, 14, 0),
-                        allDay: false
-                    },
-                    {
-                        title: 'Gimtadienis',
-                        start: new Date(y, m, d+1, 19, 0),
-                        end: new Date(y, m, d+1, 22, 30),
-                        allDay: false
-                    }
-                ]
-            });
-        })
-    </script>
 {% endblock %}

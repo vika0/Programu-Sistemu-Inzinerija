@@ -1,0 +1,72 @@
+
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <h3>Kalendorius</h3>
+            </div>
+            <ul class="nav nav-justified">
+                <li><a class="text-center" href="#"><i class="fa fa-tag fa-5x"></i> <br>Tags</a></li>
+                <li><a class="text-center" href="#"><i class="fa fa-bookmark fa-5x"></i> <br>Užduotys</a></li>
+                <li><a class="text-center" href="#"><i class="fa fa-users  fa-5x"></i> <br>Susitikimai</a></li>
+            </ul>
+            <hr>
+            <div id="calendar"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js',function(){
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                editable: true,
+                events: [
+                    {
+                        title: 'Paskutinė savaitė pabaigti projektui',
+                        start: new Date(y, m, 16),
+                        end: new Date(y, m, 20)
+                    },
+                    {
+                        id: 999,
+                        title: 'Susitikimas',
+                        start: new Date(y, m, d-3, 16, 0),
+                        allDay: false
+                    },
+                    {
+                        id: 999,
+                        title: 'Susitikimas',
+                        start: new Date(y, m, d+4, 16, 0),
+                        allDay: false
+                    },
+                    {
+                        title: 'Šventė',
+                        start: new Date(y, m, d, 12, 0),
+                        end: new Date(y, m, d, 14, 0),
+                        allDay: false
+                    },
+                    {
+                        title: 'Gimtadienis',
+                        start: new Date(y, m, d+1, 19, 0),
+                        end: new Date(y, m, d+1, 22, 30),
+                        allDay: false
+                    }
+                ]
+            });
+        })
+    </script>
+{% endblock %}
