@@ -1,0 +1,57 @@
+<?php
+
+namespace alkani\PSIBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Project
+ *
+ * @ORM\Table(name="project", indexes={@ORM\Index(name="has_2", columns={"fk_clientId"})})
+ * @ORM\Entity
+ */
+class Project
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=30, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", length=65535, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \alkani\PSIBundle\Entity\Client
+     *
+     * @ORM\ManyToOne(targetEntity="alkani\PSIBundle\Entity\Client")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_clientId", referencedColumnName="id")
+     * })
+     */
+    private $fkClientid;
+
+
+}
+

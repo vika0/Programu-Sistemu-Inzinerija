@@ -1,0 +1,81 @@
+<?php
+
+namespace alkani\PSIBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Task
+ *
+ * @ORM\Table(name="task", indexes={@ORM\Index(name="has_3", columns={"fk_projectId"}), @ORM\Index(name="has_4", columns={"fk_userId"})})
+ * @ORM\Entity
+ */
+class Task
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=20, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", length=65535, nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="deadline", type="date", nullable=true)
+     */
+    private $deadline;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="priorities", type="smallint", nullable=true)
+     */
+    private $priorities;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \alkani\PSIBundle\Entity\Project
+     *
+     * @ORM\ManyToOne(targetEntity="alkani\PSIBundle\Entity\Project")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_projectId", referencedColumnName="id")
+     * })
+     */
+    private $fkProjectid;
+
+    /**
+     * @var \alkani\PSIBundle\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="alkani\PSIBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_userId", referencedColumnName="id")
+     * })
+     */
+    private $fkUserid;
+
+
+}
+

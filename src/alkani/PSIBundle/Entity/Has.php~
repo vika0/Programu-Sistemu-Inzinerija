@@ -1,0 +1,38 @@
+<?php
+
+namespace alkani\PSIBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Has
+ *
+ * @ORM\Table(name="has", indexes={@ORM\Index(name="IDX_C6F39EADCAB767", columns={"fk_projectId"})})
+ * @ORM\Entity
+ */
+class Has
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fk_userId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $fkUserid;
+
+    /**
+     * @var \alkani\PSIBundle\Entity\Project
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="alkani\PSIBundle\Entity\Project")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="fk_projectId", referencedColumnName="id")
+     * })
+     */
+    private $fkProjectid;
+
+
+}
+

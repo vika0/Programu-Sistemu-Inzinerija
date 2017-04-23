@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="alkani\PSIBundle\Entity\Has" table="has">
+    <indexes>
+      <index name="IDX_C6F39EADCAB767" columns="fk_projectId"/>
+    </indexes>
+    <id name="fkUserid" type="integer" column="fk_userId"/>
+    <id name="fkProjectid" association-key="true"/>
+    <one-to-one field="fkProjectid" target-entity="Project" fetch="LAZY">
+      <join-columns>
+        <join-column name="fk_projectId" referenced-column-name="id"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>

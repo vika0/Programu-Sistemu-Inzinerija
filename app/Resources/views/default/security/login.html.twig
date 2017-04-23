@@ -8,21 +8,26 @@
 {% endblock %}
 {% block body %}
 
-        <div class="front-page-logo">
-            <img src="{{ asset('images/logo1.png') }}" />
-            <p class="front-page-logo-text">TASKS</p>
-            <p class="front-page-title"> | Geriausias pasirinkimas užduočių tvarkymui</p>
-        </div>
+    <div class="front-page-logo">
+        <img src="{{ asset('images/logo1.png') }}" />
+        <p class="front-page-logo-text">TASKS</p>
+        <p class="front-page-title"> | Geriausias pasirinkimas užduočių tvarkymui</p>
+    </div>
     <div class="login">
         <h1>Login</h1>
+        <br><br>
+        {% if error %}
+            <h3 class="login_error_message text text-danger" >Email or password is incorrect</h3>
+        {% endif %}
+        <br><br>
         <form action="{{ path('login') }}" method="post">
             <input type="text" name="_username" placeholder="Email" required="required" />
             <input type="password" name="_password" placeholder="Password" required="required" />
             <button type="submit" class="btn btn-primary btn-block btn-large">Sign In</button>
         </form>
-            {#<div >#}
-                <p style="color: white" >forma dar neveikia, <a class="a-hover" href="about" style="color: #B4B9BE"> pereiti į vidinį puslapį</a></p>
-            {#</div>#}
+        {#<div >#}
+        <p style="color: white" >forma dar neveikia, <a class="a-hover" href="about" style="color: #B4B9BE"> pereiti į vidinį puslapį</a></p>
+        {#</div>#}
     </div>
 {% endblock %}
 {% block footer %}
