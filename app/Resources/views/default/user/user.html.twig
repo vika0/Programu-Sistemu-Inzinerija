@@ -12,19 +12,19 @@
                 <table class="table table-sm table-inverse">
                     <tr>
                         <th>Vardas:</th>
-                        <td>Bill</td>
+                        <td>{{app.session.get('user').getName()}}</td>
                     </tr>
                     <tr>
                         <th>Pavardė:</th>
-                        <td>Gates</td>
+                        <td>{{app.session.get('user').getSurname()}}</td>
                     </tr>
                     <tr>
                         <th>Telefono nr.:</th>
-                        <td>555 77 854</td>
+                        <td>{{app.session.get('user').getPhone()}}</td>
                     </tr>
                     <tr>
                         <th>El. paštas:</th>
-                        <td>demo@demo.lt</td>
+                        <td>{{app.session.get('user').getEmail()}}</td>
                     </tr>
                 </table>
             </div>

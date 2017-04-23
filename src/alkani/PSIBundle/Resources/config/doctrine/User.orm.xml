@@ -35,5 +35,10 @@
         <option name="fixed"/>
       </options>
     </field>
+    <field name="phone" type="string" column="phone" length="20" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
   </entity>
 </doctrine-mapping>

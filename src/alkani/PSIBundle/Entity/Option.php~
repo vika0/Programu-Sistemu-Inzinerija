@@ -46,5 +46,86 @@ class Option
     private $fkTaskid;
 
 
-}
 
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Option
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set isChecked
+     *
+     * @param boolean $isChecked
+     *
+     * @return Option
+     */
+    public function setIsChecked($isChecked)
+    {
+        $this->isChecked = $isChecked;
+
+        return $this;
+    }
+
+    /**
+     * Get isChecked
+     *
+     * @return boolean
+     */
+    public function getIsChecked()
+    {
+        return $this->isChecked;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set fkTaskid
+     *
+     * @param \alkani\PSIBundle\Entity\Task $fkTaskid
+     *
+     * @return Option
+     */
+    public function setFkTaskid(\alkani\PSIBundle\Entity\Task $fkTaskid = null)
+    {
+        $this->fkTaskid = $fkTaskid;
+
+        return $this;
+    }
+
+    /**
+     * Get fkTaskid
+     *
+     * @return \alkani\PSIBundle\Entity\Task
+     */
+    public function getFkTaskid()
+    {
+        return $this->fkTaskid;
+    }
+}
