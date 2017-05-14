@@ -1,0 +1,42 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+            <div class="text-center">
+                <h3>Vartotojo profilis</h3>
+            </div>
+            <div class="col-md-8">
+                <form action="{{ path('userSave') }}" method="post">
+                    <table class="table table-sm table-inverse">
+                        <tr>
+                            <th>Vardas:</th>
+                            <th><input type="text" class="userEdit-input" name="_name" value="{{app.session.get('user').getName()}}" required="required" /></th>
+                        </tr>
+                        <tr>
+                            <th>Pavardė:</th>
+                            <th><input type="text" class="userEdit-input" name="_surname" value="{{app.session.get('user').getSurname()}}" required="required" /></th>
+                        </tr>
+                        <tr>
+                            <th>Telefono nr.:</th>
+                            <th><input type="text" class="userEdit-input" name="_phone" value="{{app.session.get('user').getPhone()}}" required="required" /></th>
+                        </tr>
+                        <tr>
+                            <th>El. paštas:</th>
+                            <th><input type="text" class="userEdit-input" name="_email" value="{{app.session.get('user').getEmail()}}" required="required" /></th>
+                        </tr>
+                    </table>
+                    <input type="hidden" class="userEdit-input" name="_id" value="{{app.session.get('user').getId()}}" required="required" />
+                    <button type="submit" class="btn btn-info">Išsaugoti pakeitimus</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center user-img-size">
+                    <img src="{{ asset('images/offer2.jpg') }}" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

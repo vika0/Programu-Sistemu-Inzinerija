@@ -3,6 +3,7 @@
 namespace alkani\PSIBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="alkani\PSIBundle\Repository\UserRepository")
@@ -246,6 +247,7 @@ class User
     {
         return $this->id;
     }
+
     /**
      * @var string
      */
@@ -274,5 +276,37 @@ class User
     public function getPhone()
     {
         return $this->phone;
+    }
+
+    /**
+     * @var string
+     * @ORM\Column(name="image", type="string", length=30, nullable=false)
+     * @Assert\File(mimeTypes={ "application/jpg" })
+     */
+    private $image;
+
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return User
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

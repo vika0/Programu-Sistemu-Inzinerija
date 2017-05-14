@@ -1,0 +1,42 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+            <div class="text-center">
+                <h3>Vartotojo profilis</h3>
+            </div>
+            <div class="col-md-8">
+                {% if error != null%}
+                    <h3 class="login_error_message text text-danger" >{{ error }}</h3>
+                {% endif %}
+                <br><br>
+                <form action="{{ path('userPwd') }}" method="post">
+                    <table class="table table-sm table-inverse">
+                        <tr>
+                            <th>Esamas slaptažodis:</th>
+                            <th><input type="password" name="_oldPwd" required="required" /></th>
+                        </tr>
+                        <tr>
+                            <th>Naujas slaptažodis:</th>
+                            <th><input type="password" name="_newPwd" required="required" /></th>
+                        </tr>
+                        <tr>
+                            <th>Pakartoti:</th>
+                            <th><input type="password" name="_newPwd2" required="required" /></th>
+                        </tr>
+                    </table>
+                    <input type="hidden" class="userEdit-input" name="_id" value="{{app.session.get('user').getId()}}" required="required" />
+                    <button type="submit" class="btn btn-info">Išsaugoti pakeitimus</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center user-img-size">
+                    <img src="{{ asset('images/offer2.jpg') }}" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
