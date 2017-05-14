@@ -28,13 +28,17 @@ class SecurityController extends Controller
         $pwd = $request->get('_password');
 
 
+
         $entityManager = $this->getDoctrine()->getManager();
         $loginRepository = $entityManager->getRepository('alkani\PSIBundle\Entity\User');
-        $user = $loginRepository->findOneBy(
-            array('email' => $uid, 'password' => $pwd));
+        $user = $loginRepository->findOneBy(array('email' => $uid));
 
+        $encoder = $this->get('security.password_encoder');
+        $password = $this->get('security.password_encoder')
+            ->encodePassword($user, $pwd);
 
-        if ($user != null) {
+        $match = $encoder->isPasswordValid($user, $pwd);
+        if ($match) {
             $session->set('user', $user);
             $session->set('username', $user->getName());
             return $this->render('default/about/about.html.twig', array('user' =>$user));

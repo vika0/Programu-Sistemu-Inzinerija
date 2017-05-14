@@ -4,11 +4,13 @@ namespace alkani\PSIBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="alkani\PSIBundle\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var string
@@ -279,34 +281,43 @@ class User
     }
 
     /**
-     * @var string
-     * @ORM\Column(name="image", type="string", length=30, nullable=false)
-     * @Assert\File(mimeTypes={ "application/jpg" })
+     *
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
      */
-    private $image;
+    private $plainPassword;
 
 
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return User
-     */
-    public function setImage($image)
+    public function getPlainPassword()
     {
-        $this->image = $image;
-
-        return $this;
+        return $this->plainPassword;
     }
 
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
+    public function setPlainPassword($password)
     {
-        return $this->image;
+        $this->plainPassword = $password;
     }
+
+    public function getUsername()
+    {
+        return null;
+    }
+
+    public function setUsername($username) { }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function  getRoles()
+    {
+        // TODO: Implement getRoles() method.
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
 }

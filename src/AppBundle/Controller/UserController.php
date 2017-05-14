@@ -58,11 +58,15 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('alkani\PSIBundle\Entity\User')->find($uid);
-        $pwd = $user->getPassword();
 
-        if ($pwd == $oldPwd) {
+        $encoder = $this->get('security.password_encoder');
+
+        $match = $encoder->isPasswordValid($user, $oldPwd);
+
+        if ($match) {
             // Updates the user table
-            $user->setPassword($newPwd);
+            $password = $encoder->encodePassword($user, $newPwd);
+            $user->setPassword($password);
             $em->flush();
 
             $session = $request->getSession('user');
