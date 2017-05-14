@@ -18,19 +18,20 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('surname', TextType::class)
-            ->add('email', EmailType::class)
+            ->add('name', TextType::class, array('label' => 'Vardas') )
+            ->add('surname', TextType::class, array('label' => 'Pavardė'))
+            ->add('email', EmailType::class, array('label' => 'El. paštas'))
             ->add('dateOfBirth', DateType::class, array(
                 'years'           => range(date('Y')-100, date('Y')),
-                'placeholder' => array('year' => '----', 'month' => '----', 'day' => '----' )
+                'placeholder' => array('year' => '----', 'month' => '----', 'day' => '----' ),
+                'label' => 'Gimimo data'
                 ))
-            ->add('personalId', TextType::class)
-            ->add('phone', TextType::class)
+            ->add('personalId', TextType::class, array('label' => 'Asmens kodas'))
+            ->add('phone', TextType::class, array('label' => 'Telefon nr.'))
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'first_options'  => array('label' => 'Slaptažodis'),
+                'second_options' => array('label' => 'Pakartotas slaptažodis'),
             ))
             ->add('role', TextType::class)
         ;

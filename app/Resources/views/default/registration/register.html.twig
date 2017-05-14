@@ -7,13 +7,14 @@
 {% endblock %}
 {% block body %}
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
+        <h1 style="color:white" class="registracija-form">Registracija</h1>
+        <div class="row registracija-form">
+            <div class="col-md-8 table table-warning">
                 {{ form_start(form) }}
                 {{ form_row(form.name) }}
                 {{ form_row(form.surname) }}
                 {{ form_row(form.email) }}
-                {{ form_row(form.dateOfBirth) }}
+                <div>{{ form_row(form.dateOfBirth) }}</div>
                 {{ form_row(form.personalId) }}
                 {{ form_row(form.phone) }}
                 {{ form_row(form.plainPassword.first) }}
@@ -21,7 +22,7 @@
                 {{ form_row(form.role) }}
 
 
-                <button type="submit">Register!</button>
+                <button style="color:black" type="submit">Registruotis!</button>
                 {{ form_end(form) }}
             </div>
         </div>
