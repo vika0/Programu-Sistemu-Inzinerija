@@ -20,9 +20,19 @@ class ProjectsController extends Controller
     public function indexAction(Request $request)
     {
 
+
         return $this->render('default/projects/projects.html.twig', [
 //            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
+    }
+    /**
+     * @Route("/projects/list")
+     */
+    public function listAction()
+    {
+        return $this->render('default/projects/projects.html.twig', array(
+            'projects' => $this->getDoctrine()->getRepository('alkani\PSIBundle\Entity\Project')->findAll()
+        ));
     }
     /**
      * @Route("/projects/show")
