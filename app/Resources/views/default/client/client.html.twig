@@ -1,0 +1,29 @@
+
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div id="project-fpage" class="container">
+    <div class="row">
+        <div class="text-center">
+            <h1>Klientų puslapis</h1>
+        </div>
+        <table class="table table-sm table-inverse">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Vardas</th>
+                <th>Pavardė</th>
+
+            </tr>
+            </thead>
+            <tbody>
+    {% for client in clients %}
+
+        {{ client.name }}
+    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+{% endblock %}
