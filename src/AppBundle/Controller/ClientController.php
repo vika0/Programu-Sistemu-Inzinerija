@@ -26,7 +26,7 @@ class ClientController extends Controller
     }
 
     /**
-     * @Route("/client/list")
+     * @Route("/clientlist")
      */
     public function listAction()
     {
