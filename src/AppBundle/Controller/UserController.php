@@ -123,4 +123,26 @@ class UserController extends Controller
 
         return $this->render('default/user/user.html.twig');
     }
+
+
+    /**
+     * @Route("/usersList")
+     */
+    public function listAction()
+    {
+        return $this->render('default/users/users.html.twig', array(
+            'users' => $this->getDoctrine()->getRepository('alkani\PSIBundle\Entity\User')->findAll()
+        ));
+    }
+
+
+    /**
+     * @Route("/users/show")
+     */
+    public function showAction()
+    {
+        return $this->render('default/tasks/showTask.html.twig', array(
+//            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ));
+    }
 }
