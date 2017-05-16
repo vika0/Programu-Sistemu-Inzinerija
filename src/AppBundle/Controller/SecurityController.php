@@ -33,6 +33,9 @@ class SecurityController extends Controller
         $loginRepository = $entityManager->getRepository('alkani\PSIBundle\Entity\User');
         $user = $loginRepository->findOneBy(array('email' => $uid));
 
+        if (empty($user))
+            return $this->render('default/security/login.html.twig', array('error' =>"Bad email or password"));
+
         $encoder = $this->get('security.password_encoder');
         $password = $this->get('security.password_encoder')
             ->encodePassword($user, $pwd);
@@ -44,5 +47,15 @@ class SecurityController extends Controller
             return $this->render('default/about/about.html.twig', array('user' =>$user));
         } else
             return $this->render('default/security/login.html.twig', array('error' =>"Bad email or password"));
+    }
+
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logoutAction()
+    {
+        $session = new Session();
+        $session->clear();
+        return $this->render('default/home/home.html.twig');
     }
 }
