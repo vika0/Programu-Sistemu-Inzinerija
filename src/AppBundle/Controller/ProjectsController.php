@@ -35,9 +35,9 @@ class ProjectsController extends Controller
         ));
     }
     /**
-     * @Route("/projects/show")
+     * @Route("/projectsShow")
      */
-    public function showAction()
+    public function showAction($id)
     {
         return $this->render('default/projects/showProject.html.twig');
     }
