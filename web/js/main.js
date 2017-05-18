@@ -10,4 +10,4 @@ Nice and Simple
 $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
-});
+}).click();
