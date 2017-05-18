@@ -8,6 +8,35 @@
                     <h1>{{ project.title }}</h1>
                 </div>
                 <p>{{ project.description }}</p>
+                <br><br><br>
+                <p>Užduotys</p>
+                <table class="table table-sm table-inverse">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Pavadinimas</th>
+                        <th>Komandos narys</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                        <th>Svarbumo lygis</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for val in tasks %}
+                        <tr>
+                            <td>{{ val.id }}</td>
+                            <td>{{ val.title }}</td>
+                            <td>{{ val.description }}</td>
+                            <td>{{ val.deadline }}</td>
+                            <td>{{ val.status }}</td>
+                            <td>{{ val.priorities }}</td>
+                            <td>{{  ( path( 'userGet', { 'id' : val.id } ) ) }}</td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
 

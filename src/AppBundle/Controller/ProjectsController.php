@@ -34,11 +34,21 @@ class ProjectsController extends Controller
             'projects' => $this->getDoctrine()->getRepository('alkani\PSIBundle\Entity\Project')->findAll()
         ));
     }
+
     /**
-     * @Route("/projectsShow")
+     * @Route("/projectsShow", name="projectsShow")
      */
-    public function showAction($id)
+    public function showAction()
     {
-        return $this->render('default/projects/showProject.html.twig');
+//        return $this->render('default/projects/showProject.html.twig');
+//
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $projectRepository = $entityManager->getRepository('alkani\PSIBundle\Entity\Project');
+        $taskRepository = $entityManager->getRepository('alkani\PSIBundle\Entity\Task');
+        $userRepository = $entityManager->getRepository('alkani\PSIBundle\Entity\User');
+        $project = $projectRepository->findOneBy(array('id' => $_POST['id']));
+        $tasks = $taskRepository->findBy(array('fkProjectid' => $_POST['id'] ));
+        return $this->render('default/projects/showProject.html.twig', array('project' =>$project, 'tasks' => $tasks));
     }
 }

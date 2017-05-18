@@ -22,11 +22,11 @@
                     <td><a href="/projectsShow">{{ val.id }}</a></td>
 
 
-                    {#NEVEIKIA-----------------------------------------#}
-                    {#<td><form method="post" action="{{ path('/projectsShow') }}">#}
-                            {#<input type="hidden" name="id" value="{{ val.id }}">#}
-                        {#<button type="submit">{{ val.title }}</button>#}
-                        {#</form></td>#}
+                    NEVEIKIA-----------------------------------------
+                    <td><form method="post" action="{{ path('projectsShow') }}">
+                            <input type="hidden" name="id" value="{{ val.id }}">
+                        <button type="submit">{{ val.title }}</button>
+                        </form></td>
                     <td>{{ val.description }}</td>
                     <td>{{ val.status }}</td>
                 </tr>

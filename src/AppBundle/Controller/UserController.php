@@ -146,4 +146,19 @@ class UserController extends Controller
 //            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
+
+    /**
+     * @Route("/userGet", name="userGet")
+     */
+    public function getAction($id)
+    {
+//        return $this->render('default/projects/showProject.html.twig');
+//
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $userRepository = $entityManager->getRepository('alkani\PSIBundle\Entity\User');
+        $user = $userRepository->findOneBy(array('id' => $id ));
+        var_dump($user);
+        return $this->render('default/projects/showProject.html.twig', array('surname' =>$user['surname']));
+    }
 }
