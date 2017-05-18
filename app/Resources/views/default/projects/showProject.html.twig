@@ -19,7 +19,7 @@
                         <th>Deadline</th>
                         <th>Status</th>
                         <th>Svarbumo lygis</th>
-
+                        <th>Atsakingas</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,8 +31,8 @@
                             <td>{{ val.deadline }}</td>
                             <td>{{ val.status }}</td>
                             <td>{{ val.priorities }}</td>
-                            <td>{{  ( path( 'userGet', { 'id' : val.id } ) ) }}</td>
-
+                            <td>{{ val.fkUserid.name }} {{ val.fkUserid.surname }}</td>
+                            {#<td>{{ ( path( 'userGet', { 'id' : val.id } ) ) }}</td>#}
                         </tr>
                     {% endfor %}
                     </tbody>

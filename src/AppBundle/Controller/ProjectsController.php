@@ -49,6 +49,11 @@ class ProjectsController extends Controller
         $userRepository = $entityManager->getRepository('alkani\PSIBundle\Entity\User');
         $project = $projectRepository->findOneBy(array('id' => $_POST['id']));
         $tasks = $taskRepository->findBy(array('fkProjectid' => $_POST['id'] ));
-        return $this->render('default/projects/showProject.html.twig', array('project' =>$project, 'tasks' => $tasks));
+        $users = $userRepository->findBy(array('id' => $_POST['id'] ));
+        return $this->render('default/projects/showProject.html.twig', array('project' => $project, 'tasks' => $tasks, 'users' => $users));
+
+//        return $this->render('default/client/client.html.twig', array(
+//            'clients' => $this->getDoctrine()->getRepository('alkani\PSIBundle\Entity\Client')->findAll()
+//        ));
     }
 }
