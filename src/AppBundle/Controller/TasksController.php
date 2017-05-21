@@ -112,6 +112,7 @@ class TasksController extends Controller
         }
 
         return $this->render('default/tasks/editTask.html.twig', [
+            'task' => $task,
             'form' => $form->createView()
         ]);
 

@@ -1,0 +1,32 @@
+
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div id="project-fpage" class="container">
+        <div class="row">
+            <div class="text-center">
+                <h1>Nauja užduotis</h1>
+            </div>
+
+
+            <div class="login">
+
+
+            {{ form_start(form) }}
+                <div class="row">
+
+                    <div class="col-md-12">{{ form_row(form.title) }}</div>
+                    <div class="col-md-6">{{ form_row(form.fkProjectId) }}</div>
+                    <div class="col-md-6">{{ form_row(form.fkUserId) }}</div>
+                    <div class="col-md-4">{{ form_row(form.deadline) }}</div>
+                    <div class="col-md-4">{{ form_row(form.status) }}</div>
+                    <div class="col-md-4">{{ form_row(form.priorities) }}</div>
+                    <div class="col-md-12"> {{ form_row(form.description) }}</div>
+                </div>
+                <button class="submit" style="color:black" type="submit">Išsaugoti</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

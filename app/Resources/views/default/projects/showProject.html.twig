@@ -9,7 +9,7 @@
                 </div>
                 <p>{{ project.description }}</p>
                 <br><br><br>
-                <p>Užduotys</p>
+                <p>Projekto užduotys:</p>
                 <table class="table table-sm table-inverse">
                     <thead>
                     <tr>
@@ -28,7 +28,7 @@
                             <td>{{ val.id }}</td>
                             <td>{{ val.title }}</td>
                             <td>{{ val.description }}</td>
-                            <td>{{ val.deadline }}</td>
+                            <td>{{ val.deadline|date('Y-m-d') }}</td>
                             <td>{{ val.status }}</td>
                             <td>{{ val.priorities }}</td>
                             <td>{{ val.fkUserid.name }} {{ val.fkUserid.surname }}</td>

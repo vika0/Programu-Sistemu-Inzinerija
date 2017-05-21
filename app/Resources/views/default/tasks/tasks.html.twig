@@ -7,6 +7,7 @@
             <div class="text-center">
                 <h1>Užduočių puslapis</h1>
             </div>
+            <a href="createTask">Nauja užduotis</a>
             <div class="text-right">
                 <p class="paragraph-display-inline">
                     <input type="checkbox" id="cbox1" value="first_checkbox">
@@ -24,75 +25,27 @@
                     <th>Pavadinimas</th>
                     <th>Projektas</th>
                     <th>Komandos narys</th>
-                    <th>Deadline</th>
-                    <th>Status</th>
+                    <th>Atlikti iki</th>
+                    <th>Statusas</th>
+                    <th>Veiksmai</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="table-warning">
-                    <td>1</td>
-                    <td><a href="/tasks/show">Dizaino parinkimas</a></td>
-                    <td>Projektas.lt</td>
-                    <td>Vardenis</td>
-                    <td>2017-05-04</td>
-                    <td>in progress</td>
+    {% for task in tasks %}
+                <tr class="{% if task.priorities == 2 %}table-warning{% elseif task.priorities == 3 %}table-danger{% elseif task.priorities == 1 %}table-success{% endif %}">
+                    <td>{{ task.id }}</td>
+                    <td><a href="/tasks/show?id={{ task.id }}">{{ task.title }}</a></td>
+                    <td>{{ task.FkProjectId.title }}</td>
+                    <td>{{ task.FkUserId.name }}</td>
+                    <td>{{ task.deadline|date('Y-m-d') }}</td>
+                    <td>{{ task.status }}</td>
+                    <td>
+                        <a href="/tasks/show?id={{ task.id }}"><i class="fa fa-eye"></i> </a>
+                        <a href="{{  path('task_edit',{'id': task.id}) }}"><i class="fa fa-pencil"></i> </a>
+                        <a href="{{  path('delete',{'id': task.id}) }}"><i class="fa fa-trash"></i></a>
+                    </td>
                 </tr>
-                <tr class="table-danger">
-                    <td>2</td>
-                    <td><a href="tasks/show">Korekcijos</a></td>
-                    <td>Projektas1.lt</td>
-                    <td>Vardenis</td>
-                    <td>2017-04-07</td>
-                    <td>not started</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
-                    <td>Projektas2.lt</td>
-                    <td>Vardenis</td>
-                    <td>2017-04-18</td>
-                    <td>not started</td>
-                </tr>
-                <tr class="table-success">
-                    <td>4</td>
-                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
-                    <td>Projektas3.lt</td>
-                    <td>Vardenis</td>
-                    <td>2017-04-18</td>
-                    <td>done</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
-                    <td>Projektas4.lt</td>
-                    <td>Vardenis</td>
-                    <td>2017-04-18</td>
-                    <td>not started</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
-                    <td>Projektas5.lt</td>
-                    <td>Vardenis</td>
-                    <td>2017-04-18</td>
-                    <td>not started</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
-                    <td>Projektas22.lt</td>
-                    <td>Vardenis</td>
-                    <td>2017-04-18</td>
-                    <td>not started</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td><a href="tasks/show">Dizaino parinkimas</a></td>
-                    <td>Projektas12.lt</td>
-                    <td>Vardenis</td>
-                    <td>2017-04-18</td>
-                    <td>not started</td>
-                </tr>
+    {% endfor %}
                 </tbody>
             </table>
         </div>
